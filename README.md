@@ -1,20 +1,16 @@
 # project_euler_clojure
 
-FIXME: description
-
-## Installation
-
-Download from http://example.com/FIXME.
+This is my clojure code to solve project euler problems
 
 ## Usage
 
-FIXME: explanation
+Navigate to the top level project_euler_clojure directory:
 
-    $ java -jar project_euler_clojure-0.1.0-standalone.jar [args]
+command:  lein run
+Executes the code in "project_euler_clojure/src/project_euler_clojure/core.clj"
 
-## Options
-
-FIXME: listing of options this app accepts.
+command: lein test
+Executes the test code in "project_euler_clojure/test/project_euler_clojure/core_test.clj"
 
 ## Examples
 
@@ -33,3 +29,4 @@ FIXME: listing of options this app accepts.
 Copyright © 2013 FIXME
 
 Distributed under the Eclipse Public License, the same as Clojure.
+
