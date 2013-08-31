@@ -1,0 +1,38 @@
+(ns project-euler-clojure.core-test
+  (:require [clojure.test :refer :all]
+            [project-euler-clojure.core :refer :all]))
+
+(deftest b-test
+  (testing
+      (is (= (fib 4) 5))
+      )
+)
+(deftest c-test
+  (testing
+      (is (= (mag 1000) 3))
+      )
+)
+(deftest d-test
+  (testing
+      (is (= (down-mag 1000 2) 10))
+   )
+)
+(deftest d2-test
+  (testing
+      (is (= (down-mag 10000 2) 100))
+      )
+)
+(deftest sqr-rt-1
+  (testing
+      (is (= (recur-sqrt 100) 10))
+)
+(deftest sqr-rt-2
+  (testing "Numbers that are not perfect squares should return a number that when reduced by 1 and squared, will be less than the original number"
+      (is (< (- (recur-sqrt 1000) 1) 1000)
+          ))
+)
+(deftest sqr-rt-3
+  (testing "Numbers that are not perfect squares should return an overestimate of their square root such that, when the value of the function is squared it will be larger than the original number"
+      (is (> (sqr (recur-sqrt 1000)) 1000))
+      )
+)
