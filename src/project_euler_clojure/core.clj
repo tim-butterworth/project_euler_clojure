@@ -10,6 +10,8 @@
 (load "pe6")
 (load "pe7")
 (load "pe8")
+(load "pe9")
+(load "pe10")
 
 (defn jn [lst] (str "Problem " (clojure.string/join ": " lst)))
 
@@ -27,4 +29,7 @@
   (println (jn ["6" (euler_6 100)]))
   (println (jn ["7" (euler_7 10001)]))
   (println (jn ["8" (euler_8 5)]))
+  (println (jn ["9" (euler_9 1000)]))
+  (println "2,000,000 is too large for quick calculation... takes maybe 20-30 seconds, so we will do only 10,000")
+  (println (jn ["10" (euler_10 10000)]))
 )

@@ -30,6 +30,12 @@
    (if (and (< (sqr (- gn 1)) num) (>= (sqr gn) num))
        (ceil gn)
       (recur num (nextguess num gn)))))
+;not a very sophisticated test of primeality
+(defn no-divisor [x lst]
+  (def rt (recur-sqrt x))
+  (= () (filter
+         (fn [e] (and (> rt e) (= 0 (mod x e))))
+         lst)))
 
 ;test is n has any divisors (is n prime) if yes, append n to the list
 (defn add-if-prime [n lst]
@@ -38,9 +44,18 @@
     lst))
 ;lists the primes less than n
 (defn list-primes [n]
-  (loop [c 2 lst [2]]
+  (loop [c 3 lst [2]]
     (if (<= n 2)
       []
     (if (> c n)
       lst
       (recur (inc c) (add-if-prime c lst))))))
+
+;lists the primes less than n
+(defn list-n-primes [n]
+  (loop [c 3 lst [2]]
+    (if (<= n 1)
+      []
+      (if (= (count lst) n)
+        lst
+        (recur (inc c) (add-if-prime c lst))))))
