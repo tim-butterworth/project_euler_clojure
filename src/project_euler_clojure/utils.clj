@@ -51,6 +51,10 @@
       lst
       (recur (inc c) (add-if-prime c lst))))))
 
+(defn abs [n]
+  (if (> 0 n)
+    (* -1 n)
+    n))
 ;lists the primes less than n
 (defn list-n-primes [n]
   (loop [c 3 lst [2]]

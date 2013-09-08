@@ -30,3 +30,19 @@
         )
     )
 )
+;(deftest )
+(deftest abs-test-1
+  (testing "testing abs gives positive value for negative number"
+    (is (= (abs -1) 1))))
+(deftest abs-test-2
+  (testing "testing abs gives positive value for a positive number"
+    (is (= (abs 1) 1))))
+
+(deftest interpolate-test-1
+  (testing "testing abs gives positive value for a positive number"
+    (is (= (interpolate [0 0] [0 0]) (list [0 0])))))
+
+(deftest interpolate-test-2
+  (testing "testing abs gives positive value for a positive number"
+    (def inter-list (interpolate [10 0] [2 8]))
+    (is (= inter-list '([10 0] [9 1] [8 2] [7 3] [6 4] [5 5] [4 6] [3 7] [2 8])))))

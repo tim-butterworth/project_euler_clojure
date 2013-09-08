@@ -13,7 +13,7 @@
   (vec (filter (fn [n] (not (= n nil))) (map (fn [n] (string-to-number n)) lst))))
 (defn get-number-vector [n]
   (to-number-vec (clojure.string/split (slurp n) #"")))
-(def base-vec (get-number-vector "src/project_euler_clojure/pe8.txt"))
+(def base-vec (get-number-vector "src/project_euler_clojure/data/pe8.txt"))
 (defn get-subset [lst size offset]
   (subvec lst
           (- size offset)

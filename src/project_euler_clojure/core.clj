@@ -12,6 +12,7 @@
 (load "pe8")
 (load "pe9")
 (load "pe10")
+(load "pe11")
 
 (defn jn [lst] (str "Problem " (clojure.string/join ": " lst)))
 
@@ -32,4 +33,5 @@
   (println (jn ["9" (euler_9 1000)]))
   (println "2,000,000 is too large for quick calculation... takes maybe 20-30 seconds, so we will do only 10,000")
   (println (jn ["10" (euler_10 10000)]))
+  (println (jn ["11" (euler_11 "src/project_euler_clojure/data/pe11.txt")]))
 )
