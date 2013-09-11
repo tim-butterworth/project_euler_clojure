@@ -6,14 +6,22 @@
    (range 1 (+ (recur-sqrt n) 1))))
 (defn add-compliment-factors [n small-factor-list]
   (clojure.set/union
-   (set (map (fn [factor] (/ n factor))
+   (set (pmap (fn [factor] (/ n factor))
              small-factor-list))
    (set small-factor-list)))
 (defn all-factors [n]
   (add-compliment-factors n (small-factors n)))
 (defn first-n-factor-triangle [n]
   (loop [tri 1]
-    (if (>= (count (all-factors
-                    (triangle tri))) n)
-      (triangle tri)
-      (recur (inc tri)))))
+    (let [triangled (triangle tri)]
+      (if (>= (count (all-factors triangled)) n)
+        triangled
+        (recur (inc tri))))))
+(defn first-n-factor-triangle-opt [n]
+  (loop [tri 1]
+    (let [triangled (triangle tri)]
+      (if (>= (recur-sqrt triangled) (/ n 2))
+        (if (>= (count (all-factors triangled)) n)
+          triangled
+          (recur (inc tri)))
+        (recur (inc tri))))))

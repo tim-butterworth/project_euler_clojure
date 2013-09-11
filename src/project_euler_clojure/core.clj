@@ -13,7 +13,7 @@
 (load "pe9")
 (load "pe10")
 (load "pe11")
-
+(load "pe12")
 (defn jn [lst] (str "Problem " (clojure.string/join ": " lst)))
 
 (defn -main

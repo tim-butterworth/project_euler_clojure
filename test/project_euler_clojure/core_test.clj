@@ -1,6 +1,7 @@
 (ns project-euler-clojure.core-test
   (:require [clojure.test :refer :all]
-            [project-euler-clojure.core :refer :all]))
+            [project-euler-clojure.core :refer :all]
+))
 
 (deftest fib-test
   (testing "testing fib"
