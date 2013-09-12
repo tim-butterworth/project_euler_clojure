@@ -25,3 +25,5 @@
           triangled
           (recur (inc tri)))
         (recur (inc tri))))))
+(defn euler_12 [n]
+  (first-n-factor-triangle n))

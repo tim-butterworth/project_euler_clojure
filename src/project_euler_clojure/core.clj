@@ -2,6 +2,8 @@
   (:gen-class))
 (require 'clojure.set)
 (require 'clojure.string)
+(import 'java.math.BigInteger)
+
 (load "pe1")
 (load "pe2")
 (load "pe3")
@@ -14,6 +16,8 @@
 (load "pe10")
 (load "pe11")
 (load "pe12")
+(load "pe13")
+
 (defn jn [lst] (str "Problem " (clojure.string/join ": " lst)))
 
 (defn -main
@@ -34,4 +38,6 @@
   (println "2,000,000 is too large for quick calculation... takes maybe 20-30 seconds, so we will do only 10,000")
   (println (jn ["10" (euler_10 10000)]))
   (println (jn ["11" (euler_11 "src/project_euler_clojure/data/pe11.txt")]))
+  (println (jn ["12" (euler_12 500)]))
+  (println (jn ["13" (euler_13 "src/project_euler_clojure/data/pe13.txt" 10)]))
 )
