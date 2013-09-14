@@ -2,6 +2,12 @@
 
 This is my clojure code to solve project euler problems
 
+You need to run leiningen version 2.x to run this application.
+
+http://leiningen.org/
+
+If you have a previous version of leinigen installed run lein update.
+
 ## Usage
 
 Navigate to the top level project_euler_clojure directory:
