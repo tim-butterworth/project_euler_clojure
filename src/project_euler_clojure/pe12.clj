@@ -6,7 +6,7 @@
    (range 1 (+ (recur-sqrt n) 1))))
 (defn add-compliment-factors [n small-factor-list]
   (clojure.set/union
-   (set (pmap (fn [factor] (/ n factor))
+   (set (map (fn [factor] (/ n factor))
              small-factor-list))
    (set small-factor-list)))
 (defn all-factors [n]

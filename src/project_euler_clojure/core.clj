@@ -18,6 +18,11 @@
 (load "pe12")
 (load "pe13")
 (load "pe14")
+(load "pe15")
+(load "pe16")
+(load "pe18")
+(load "pe20")
+(load "pe21")
 
 (defn jn [lst] (str "Problem " (clojure.string/join ": " lst)))
 
@@ -25,7 +30,6 @@
   "I don't do a whole lot ... yet."
   [& args]
   ;; work around dangerous default behaviour in Clojure
-  (alter-var-root #'*read-eval* (constantly false))
   (println "Hello, World!")
   (println (jn ["1" (euler_1)]))
   (println (jn ["2" (euler_2)]))
@@ -42,4 +46,12 @@
   (println (jn ["12" (euler_12 500)]))
   (println (jn ["13" (euler_13 "src/project_euler_clojure/data/pe13.txt" 10)]))
   (println (jn ["14" (euler_14 1000000)]))
+  (println (jn ["15" (euler_15 40)]))
+  (println (jn ["16" (euler_16 1000)]))
+  (println "problem 17 is boring..")
+  (println (jn ["18" (euler_18)]))
+  (println "problem 19 is boring")
+  (println (jn ["20" (euler_20 100)]))
+  (println (jn ["21" (euler_21 10000)]))
+  (alter-var-root #'*read-eval* (constantly false))
 )

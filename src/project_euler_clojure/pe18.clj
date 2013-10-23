@@ -40,5 +40,11 @@
        (condense result)
        n)))
    data))
+(defn euler_18 []
+          (solve
+           (->
+            "src/project_euler_clojure/data/sml_triangle.txt"
+            read-split-data
+            numerize-data)))
 ;(solve (-> "src/project_euler_clojure/data/sml_triangle.txt" read-split-data numerize-data))
 ;(solve (-> "src/project_euler_clojure/data/lrg_triangle.txt" read-split-data numerize-data))

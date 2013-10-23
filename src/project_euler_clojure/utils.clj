@@ -63,3 +63,20 @@
       (if (= (count lst) n)
         lst
         (recur (inc c) (add-if-prime c lst))))))
+(defn options [n]
+  (range 1 (+ (recur-sqrt n) 1)))
+(defn find-divisors [n lst]
+  (filter
+   (fn [v]
+     (= (mod n v) 0))
+   lst))
+(defn proper-divisors [n]
+  (let [small (find-divisors n (options n))]
+    (clojure.set/difference
+     (clojure.set/union
+      (set small)
+      (set
+       (map
+        (fn [v] (/ n v))
+        small)))
+     #{n})))
